@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
+import logo from '../../assets/image/gamehub.png'
 
 const Navbar = () => {
   const navLinks = (
@@ -27,7 +28,7 @@ const Navbar = () => {
           }`
         }
       >
-        About
+        Games
       </NavLink>
 
       <NavLink
@@ -40,47 +41,11 @@ const Navbar = () => {
           }`
         }
       >
-        Features
+      My Profile
       </NavLink>
 
-      <NavLink
-        to="/community"
-        className={({ isActive }) =>
-          `px-4 py-2 transition-all duration-300 ${
-            isActive
-              ? "text-white font-semibold border-b-2 border-purple-300"
-              : "text-purple-200 hover:text-white"
-          }`
-        }
-      >
-        Community
-      </NavLink>
+    
 
-      <NavLink
-        to="/pricing"
-        className={({ isActive }) =>
-          `px-4 py-2 transition-all duration-300 ${
-            isActive
-              ? "text-white font-semibold border-b-2 border-purple-300"
-              : "text-purple-200 hover:text-white"
-          }`
-        }
-      >
-        Pricing
-      </NavLink>
-
-      <NavLink
-        to="/faq"
-        className={({ isActive }) =>
-          `px-4 py-2 transition-all duration-300 ${
-            isActive
-              ? "text-white font-semibold border-b-2 border-purple-300"
-              : "text-purple-200 hover:text-white"
-          }`
-        }
-      >
-        FAQ
-      </NavLink>
     </>
   );
 
@@ -101,7 +66,7 @@ const Navbar = () => {
           to="/"
           className="flex items-center gap-2 text-white font-semibold text-lg"
         >
-          <img src="/logo.svg" alt="logo" className="w-6" />
+          <img src={logo} alt="logo" className="w-6" />
           GameHUb
         </Link>
 
