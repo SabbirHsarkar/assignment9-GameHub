@@ -6,7 +6,9 @@ import PopularGames from '../Components/PopularGames/PopularGames';
 const Home = () => {
     return (
     <><Slider></Slider>
-    <PopularGames></PopularGames></>
+    <PopularGames></PopularGames>
+    
+    </>
      
     );
 };

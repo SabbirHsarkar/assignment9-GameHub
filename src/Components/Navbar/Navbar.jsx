@@ -19,7 +19,7 @@ const Navbar = () => {
       </NavLink>
 
       <NavLink
-        to="/about"
+        to="/games"
         className={({ isActive }) =>
           `px-4 py-2 transition-all duration-300 ${
             isActive

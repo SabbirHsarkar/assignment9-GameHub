@@ -1,27 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
-const PopularGames = () => {
-    
+const Games = () => {
+
     const [games,setgames]=useState([]);
-
-    useEffect(()=>{
-        fetch('games.json')
-        .then(res=>res.json())
-        .then(data=>setgames(data))
-        .catch(err=>console.log(err))
-    },[])
-
-   
-
+    
+        useEffect(()=>{
+            fetch('games.json')
+            .then(res=>res.json())
+            .then(data=>setgames(data))
+            .catch(err=>console.log(err))
+        },[])
     return (
-        <div className='mt-5 px-[145px]'>
-            <div>
-                <h3 className='font-bold text-3xl text-center '>Popular Games</h3>
-            </div>
-            
-          <div className='grid grid-cols-3 mt-12'>
+        <div className='px-[145px]'>
+             <div className='grid grid-cols-3 mt-12'>
               {
-                games.slice(0,3).map(game=>
+                games.map(game=>
                     <div className="card bg-base-100 w-96 shadow-sm mt-3 mb-3">
                 <figure>
                     <img className='w-full h-[250px] object-cover'
@@ -49,11 +42,8 @@ const PopularGames = () => {
                 )
             }
           </div>
-        
-        
-            </div>
-           
+        </div>
     );
 };
 
-export default PopularGames;
+export default Games;
