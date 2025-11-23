@@ -7,6 +7,8 @@ import About from '../Pages/About';
 import Games from '../Pages/Games';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';
+import Profile from '../Pages/Profile';
+import PrivateRoute from './PrivateRoute';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +33,11 @@ export const router = createBrowserRouter([
          {
          path: "/signup",
     Component:Register,
+       
+        },
+          {
+         path: "/profile",
+    element:<PrivateRoute><Profile></Profile></PrivateRoute>,
        
         },
        
