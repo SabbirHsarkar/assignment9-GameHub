@@ -20,6 +20,8 @@ const handleSubmit = (e) => {
   const email = e.target.email.value;
   const pass = e.target.password.value;
 
+  
+
   signInWithEmailAndPassword(auth, email, pass)
     .then((userCredential) => {
       const user = userCredential.user;
