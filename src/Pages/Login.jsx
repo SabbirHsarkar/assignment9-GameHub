@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -11,6 +11,8 @@ const Login = () => {
 
    const location=useLocation();
    const navigate=useNavigate();
+   const [email,setEmail]=useState('');
+
    console.log(location);
 
 
@@ -47,6 +49,12 @@ const googleSignIn=()=>{
   
 }
 
+const handleForget=()=>{
+  navigate(`/forget/${email}`)
+
+
+}
+
 
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4">
@@ -59,13 +67,16 @@ const googleSignIn=()=>{
               <label className="label">
                 <span className="label-text font-semibold">Email</span>
               </label>
+
               <input
+              onChange={(e)=>setEmail(e.target.value)}
                 name="email"
                 type="email"
                 className="input input-bordered w-full"
                 placeholder="Enter your email"
               />
             </div>
+
 
             <div>
               <label className="label">
@@ -80,10 +91,13 @@ const googleSignIn=()=>{
             </div>
 
             <div className="flex justify-between text-sm">
-              <Link className="link link-hover text-blue-600">
+              <button onClick={handleForget} className="link link-hover">
+               
                 Forgot password?
-              </Link>
+            
+              </button>
             </div>
+
          <button onClick={googleSignIn} className="btn w-full "><FcGoogle /></button>
 
             <button className="btn btn-neutral w-full mt-2">Login</button>

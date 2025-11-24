@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { createBrowserRouter } from "react-router";
 import Root from '../Root/Root';
@@ -10,6 +10,8 @@ import Register from '../Pages/Register';
 import Profile from '../Pages/Profile';
 import PrivateRoute from './PrivateRoute';
 import GameDetails from '../Pages/GameDetails';
+import UpdateProfile from '../Pages/UpdateProfile';
+import ForgetPass from '../Pages/ForgetPass';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +46,12 @@ export const router = createBrowserRouter([
         {
           path:"/details/:myId",
           element:<PrivateRoute><GameDetails></GameDetails></PrivateRoute>
+        },
+        {
+          path:"/forget/:email",
+          Component:ForgetPass,
         }
+        
        
      
     ]
