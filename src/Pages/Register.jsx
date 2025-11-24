@@ -118,11 +118,11 @@ const Register = () => {
               />
             </div>
 
-            <div className="flex justify-between text-sm">
+            {/* <div className="flex justify-between text-sm">
               <Link className="link link-hover text-blue-600">
                 Forgot password?
               </Link>
-            </div>
+            </div> */}
 
             <button className="btn btn-neutral w-full mt-2">Register</button>
             <button onClick={googleSignUp} className="btn w-full "><FcGoogle /></button>

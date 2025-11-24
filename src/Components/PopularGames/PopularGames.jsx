@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from "motion/react"
+
 
 const PopularGames = () => {
     
@@ -22,7 +24,12 @@ const PopularGames = () => {
           <div className='grid grid-cols-3 mt-12'>
               {
                 games.slice(0,3).map(game=>
-                    <div className="card bg-base-100 w-96 shadow-sm mt-3 mb-3">
+                    <motion.div initial={{ scale: 0 }} 
+                    animate={{
+                scale: 1,
+              transition: { duration: 1 }
+  }}
+   className="card bg-base-100 w-96 shadow-sm mt-3 mb-3">
                 <figure>
                     <img className='w-full h-[250px] object-cover'
                         src={game?.coverPhoto}
@@ -44,7 +51,7 @@ const PopularGames = () => {
         </div>
                     
                 </div>
-            </div>
+            </motion.div>
 
                 )
             }
