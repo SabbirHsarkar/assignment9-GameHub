@@ -12,6 +12,7 @@ import PrivateRoute from './PrivateRoute';
 import GameDetails from '../Pages/GameDetails';
 import UpdateProfile from '../Pages/UpdateProfile';
 import ForgetPass from '../Pages/ForgetPass';
+import ErrorPage from '../Pages/ErrorPage';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -50,7 +51,11 @@ export const router = createBrowserRouter([
         {
           path:"/forget/:email",
           Component:ForgetPass,
-        }
+        },
+        {
+        path: "*",
+        Component: ErrorPage
+      }
         
        
      

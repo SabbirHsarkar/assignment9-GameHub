@@ -41,7 +41,7 @@ const ForgetPass = () => {
               />
 
               <button className="btn btn-neutral w-full mt-4">
-                Login
+                Reset
               </button>
             </div>
           </form>
