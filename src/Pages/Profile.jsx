@@ -40,11 +40,11 @@ const handleUpdate = (e) => {
     photoURL: photoURL,
   })
     .then(() => {
-      // very important: update Context state
+      
       setUser({ ...auth.currentUser });
 
       console.log("Profile Updated!");
-      setIsOpen(false); // close form
+      setIsOpen(false);
     })
     .catch((error) => {
       console.log(error);

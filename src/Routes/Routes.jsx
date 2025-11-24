@@ -9,6 +9,7 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import Profile from '../Pages/Profile';
 import PrivateRoute from './PrivateRoute';
+import GameDetails from '../Pages/GameDetails';
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
     element:<PrivateRoute><Profile></Profile></PrivateRoute>,
        
         },
+        {
+          path:"/details/:myId",
+          element:<PrivateRoute><GameDetails></GameDetails></PrivateRoute>
+        }
        
      
     ]

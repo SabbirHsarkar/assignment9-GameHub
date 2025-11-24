@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 const Games = () => {
 
@@ -31,7 +32,10 @@ const Games = () => {
         </div>
 
         <div className="card-actions justify-end">
-        <button className="btn btn-primary">View details</button>
+
+        <Link to={`/details/${game?.id}`}>
+         <button className="btn btn-primary">View details</button>
+        </Link>
         </div>
 
         </div>

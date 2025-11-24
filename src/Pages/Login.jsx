@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase/firebase.config";
@@ -8,6 +8,11 @@ import { FcGoogle } from "react-icons/fc";
 const Login = () => {
 
    const { setUser,user,handleGoogleSignIn } = useContext(AuthContext);
+
+   const location=useLocation();
+   const navigate=useNavigate();
+   console.log(location);
+
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -19,6 +24,7 @@ const handleSubmit = (e) => {
     .then((userCredential) => {
       const user = userCredential.user;
       setUser(user);
+      navigate(location?.state?.from || "/profile");
       
     })
     .catch((error) => {
@@ -33,6 +39,7 @@ const googleSignIn=()=>{
   .then(result=>{
     const user=result.user
     setUser(user)
+    navigate(location?.state?.from || "/profile");
   })
   .catch(err=>console.log(err))
   
