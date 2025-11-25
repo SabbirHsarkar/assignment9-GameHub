@@ -41,11 +41,11 @@ const Profile = () => {
   //   })
   //     .then(() => {
   //       setUser({ ...auth.currentUser });
-  //       console.log("Profile Updated!");
+  //       
   //       setIsOpen(false);
   //     })
   //     .catch((error) => {
-  //       console.log(error);
+  //      
   //     });
   // };
 
@@ -83,7 +83,7 @@ const Profile = () => {
 
           <div className="p-3 bg-white/10 rounded-xl shadow-md hover:bg-white/20 transition">
             <h3 className="text-xl font-bold">3</h3>
-            <p className="text-sm text-purple-200">Achievements</p>
+            <p className="text-sm text-purple-200">Achieve</p>
           </div>
         </div>
 

@@ -13,7 +13,7 @@ const Login = () => {
    const navigate=useNavigate();
    const [email,setEmail]=useState('');
 
-   console.log(location);
+  
 
 
 const handleSubmit = (e) => {

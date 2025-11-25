@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+
 import { AuthContext } from "../Provider/AuthProvider";
 import auth from "../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router";
 
 const Register = () => {
-  const { registerWithEmailPassword, setUser, user,handleGoogleSignIn } = useContext(AuthContext);
+  const { registerWithEmailPassword, setUser, handleGoogleSignIn } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,20 +18,20 @@ const Register = () => {
     const name = e.target.name.value;
     const photoURL = e.target.photoURL.value;
 
-    const uppercase=/[A-Z]/;
-  const lowercase=/[a-z]/;
+    const uppercase = /[A-Z]/;
+    const lowercase = /[a-z]/;
 
-  if(pass.length<6){
-    return alert("Less than 6 character");
-  }
+    if (pass.length < 6) {
+      return alert("Password should be at least 6 characters");
+    }
 
-  if(uppercase.test(pass)){
-    return alert("Need Uppercase");
-  }
+    if (!uppercase.test(pass)) {
+      return alert("Password needs at least one uppercase letter");
+    }
 
-   if(lowercase.test(pass)){
-    return alert("Need Uppercase");
-  }
+    if (!lowercase.test(pass)) {
+      return alert("Password needs at least one lowercase letter");
+    }
 
     registerWithEmailPassword(email, pass)
       .then((userCredential) => {
@@ -38,37 +41,37 @@ const Register = () => {
         })
           .then(() => {
             setUser(userCredential.user);
+            toast.success("Registration Successful!"); // Success message
           })
           .catch((error) => {
+            toast.error("Error updating profile");
             console.log(error);
           });
       })
-
       .catch((err) => {
+        toast.error("Error registering user"); // Display error if registration fails
         console.log(err);
       });
   };
 
-  console.log(user);
-
-  const googleSignUp=()=>{
-  handleGoogleSignIn()
-  .then(result=>{
-    const user=result.user
-    setUser(user)
-  })
-  .catch(err=>console.log(err))
-  
-}
+  const googleSignUp = () => {
+    handleGoogleSignIn()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        toast.success("Google sign-up successful!");
+      })
+      .catch((err) => {
+        toast.error("Google sign-up failed");
+        console.log(err);
+      });
+  };
 
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4">
       <div className="card w-full max-w-md bg-base-100 shadow-xl rounded-2xl">
         <div className="card-body p-8">
-          <h2 className="text-3xl font-bold text-center mb-6">
-            Create an Account
-          </h2>
-
+          <h2 className="text-3xl font-bold text-center mb-6">Create an Account</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="label">
@@ -81,7 +84,6 @@ const Register = () => {
                 placeholder="Enter your name"
               />
             </div>
-
             <div>
               <label className="label">
                 <span className="label-text font-semibold">Email</span>
@@ -93,7 +95,6 @@ const Register = () => {
                 placeholder="Enter your email"
               />
             </div>
-
             <div>
               <label className="label">
                 <span className="label-text font-semibold">Photo URL</span>
@@ -105,7 +106,6 @@ const Register = () => {
                 placeholder="Paste photo URL"
               />
             </div>
-
             <div>
               <label className="label">
                 <span className="label-text font-semibold">Password</span>
@@ -117,22 +117,13 @@ const Register = () => {
                 placeholder="Enter password"
               />
             </div>
-
-            {/* <div className="flex justify-between text-sm">
-              <Link className="link link-hover text-blue-600">
-                Forgot password?
-              </Link>
-            </div> */}
-
             <button className="btn btn-neutral w-full mt-2">Register</button>
-            <button onClick={googleSignUp} className="btn w-full "><FcGoogle /></button>
-
+            <button onClick={googleSignUp} className="btn w-full ">
+              <FcGoogle />
+            </button>
             <p className="text-center mt-3 text-sm">
               Already have an account?
-              <Link
-                to="/login"
-                className="text-blue-600 font-semibold ml-1 link link-hover"
-              >
+              <Link to="/login" className="text-blue-600 font-semibold ml-1 link link-hover">
                 Login
               </Link>
             </p>

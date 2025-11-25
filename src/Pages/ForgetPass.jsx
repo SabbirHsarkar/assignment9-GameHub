@@ -46,7 +46,7 @@ const ForgetPass = () => {
               </button>
            <Link to='/login' 
                 
-      className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white">
+      className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white mt-3">
       Go Back
     </Link>
             </div>

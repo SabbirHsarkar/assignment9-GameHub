@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const registerWithEmailPassword = (email, pass) => {
-    console.log(email, pass);
+    
     return createUserWithEmailAndPassword(auth, email, pass);
   };
 
