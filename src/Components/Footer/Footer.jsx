@@ -1,26 +1,27 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-900 text-white p-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Services */}
+       
         <div>
           <h6 className="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Services</h6>
           <ul className="space-y-2">
             <li><a href="#" className="hover:text-purple-300 transition">Branding</a></li>
             <li><a href="#" className="hover:text-purple-300 transition">Design</a></li>
-            <li><a href="#" className="hover:text-purple-300 transition">Marketing</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Development</a></li>
             <li><a href="#" className="hover:text-purple-300 transition">Advertisement</a></li>
           </ul>
         </div>
 
-        {/* Company */}
+        
         <div>
           <h6 className="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Company</h6>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-purple-300 transition">About Us</a></li>
+            <li><Link to="/about" className="hover:text-purple-300 transition">About Us</Link></li>
             <li><a href="#" className="hover:text-purple-300 transition">Contact</a></li>
             <li><a href="#" className="hover:text-purple-300 transition">Jobs</a></li>
             <li><a href="#" className="hover:text-purple-300 transition">Press Kit</a></li>

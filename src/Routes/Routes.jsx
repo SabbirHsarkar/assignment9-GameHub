@@ -64,6 +64,11 @@ export const router = createBrowserRouter([
     </PrivateRoute>
   )
 }
+,
+{
+  path:'/about',
+  Component:About
+}
 
         
        
