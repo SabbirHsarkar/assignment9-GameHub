@@ -1,11 +1,12 @@
 import { sendPasswordResetEmail } from 'firebase/auth';
 import React from 'react';
-import {  useParams } from 'react-router';
+import {  Link, Navigate, useParams } from 'react-router';
 import auth from '../firebase/firebase.config';
 
 const ForgetPass = () => {
   
   const {email}=useParams();
+  
   
 
 
@@ -43,6 +44,11 @@ const ForgetPass = () => {
               <button className="btn btn-neutral w-full mt-4">
                 Reset
               </button>
+           <Link to='/login' 
+                
+      className="btn bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white">
+      Go Back
+    </Link>
             </div>
           </form>
 
