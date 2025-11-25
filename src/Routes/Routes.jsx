@@ -55,7 +55,16 @@ export const router = createBrowserRouter([
         {
         path: "*",
         Component: ErrorPage
-      }
+      },
+      {
+  path: "/update-profile",
+  element: (
+    <PrivateRoute>
+      <UpdateProfile />
+    </PrivateRoute>
+  )
+}
+
         
        
      

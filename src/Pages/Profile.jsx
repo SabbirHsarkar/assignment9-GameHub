@@ -1,15 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { updateProfile } from "firebase/auth";
-import auth from "../firebase/firebase.config";
+// import { updateProfile } from "firebase/auth";
+// import auth from "../firebase/firebase.config";
+import { Link } from "react-router";
 
 const Profile = () => {
-  const { setUser, user } = useContext(AuthContext);
-  const [isOpen, setIsOpen] = useState(false);
+  const {  user } = useContext(AuthContext);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpenForm = () => {
-    setIsOpen(!isOpen);
-  };
+
+  // const handleOpenForm = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   // const handleUpdate=(e)=>{
   //   e.preventDefault();
@@ -28,24 +30,24 @@ const Profile = () => {
   //     });
   // }
 
-  const handleUpdate = (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const photoURL = e.target.photoURL.value;
+  // const handleUpdate = (e) => {
+  //   e.preventDefault();
+  //   const name = e.target.name.value;
+  //   const photoURL = e.target.photoURL.value;
 
-    updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photoURL,
-    })
-      .then(() => {
-        setUser({ ...auth.currentUser });
-        console.log("Profile Updated!");
-        setIsOpen(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  //   updateProfile(auth.currentUser, {
+  //     displayName: name,
+  //     photoURL: photoURL,
+  //   })
+  //     .then(() => {
+  //       setUser({ ...auth.currentUser });
+  //       console.log("Profile Updated!");
+  //       setIsOpen(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
@@ -94,11 +96,11 @@ const Profile = () => {
           </p>
         </div>
 
-        <button onClick={handleOpenForm} className="btn mt-2 items-center">
+        <Link to='/update-profile' className="btn mt-2 items-center">
           Update Profile
-        </button>
+        </Link>
 
-        {isOpen && (
+        {/* {isOpen && (
           <form onSubmit={handleUpdate} className="space-y-4 mt-4">
             <div>
               <label className="label">
@@ -128,7 +130,7 @@ const Profile = () => {
 
             <button className="btn btn-neutral w-full mt-2">Update</button>
           </form>
-        )}
+        )} */}
       </div>
     </div>
   );

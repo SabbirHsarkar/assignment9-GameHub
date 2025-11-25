@@ -16,12 +16,12 @@ const PopularGames = () => {
    
 
     return (
-        <div className='mt-5 px-[145px]'>
+        <div className='mt-5 lg:px-[145px]'>
             <div>
                 <h3 className='font-bold text-3xl text-center '>Popular Games</h3>
             </div>
             
-          <div className='grid grid-cols-3 mt-12'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12'>
               {
                 games.slice(0,3).map(game=>
                     <motion.div initial={{ scale: 0 }} 

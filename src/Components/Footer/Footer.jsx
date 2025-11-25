@@ -1,43 +1,73 @@
 import React from 'react';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
-    return (
-        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
-  <nav>
-    <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
-  </nav>
-  <nav>
-    <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
-  </nav>
-  <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
-  </nav>
-  <form>
-    <h6 className="footer-title">Newsletter</h6>
-    <fieldset className="w-80">
-      <label>Enter your email address</label>
-      <div className="join">
-        <input
-          type="text"
-          placeholder="username@site.com"
-          className="input input-bordered join-item" />
-        <button className="btn btn-primary join-item">Subscribe</button>
+  return (
+    <footer className="bg-gradient-to-r from-purple-700 via-indigo-700 to-purple-900 text-white p-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Services */}
+        <div>
+          <h6 className="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Services</h6>
+          <ul className="space-y-2">
+            <li><a href="#" className="hover:text-purple-300 transition">Branding</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Design</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Marketing</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Advertisement</a></li>
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div>
+          <h6 className="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Company</h6>
+          <ul className="space-y-2">
+            <li><a href="#" className="hover:text-purple-300 transition">About Us</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Contact</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Jobs</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Press Kit</a></li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h6 className="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Legal</h6>
+          <ul className="space-y-2">
+            <li><a href="#" className="hover:text-purple-300 transition">Terms of Use</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Privacy Policy</a></li>
+            <li><a href="#" className="hover:text-purple-300 transition">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        {/* Newsletter */}
+        <div>
+          <h6 className="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Newsletter</h6>
+          <p className="text-sm mb-3 text-white/80">Subscribe to get our latest updates and offers.</p>
+          <div className="flex gap-2">
+            <input
+              type="email"
+              placeholder="username@site.com"
+              className="input input-bordered w-full text-black"
+            />
+            <button className="btn btn-gradient bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:opacity-90">
+              Subscribe
+            </button>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex gap-4 mt-6">
+            <a href="#" className="hover:text-purple-300 transition"><FaFacebookF /></a>
+            <a href="#" className="hover:text-purple-300 transition"><FaTwitter /></a>
+            <a href="#" className="hover:text-purple-300 transition"><FaInstagram /></a>
+            <a href="#" className="hover:text-purple-300 transition"><FaLinkedinIn /></a>
+          </div>
+        </div>
       </div>
-    </fieldset>
-  </form>
-</footer>
-    );
+
+      {/* Footer Bottom */}
+      <div className="mt-12 text-center text-white/70 text-sm">
+        &copy; {new Date().getFullYear()} GameHub. All rights reserved.
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

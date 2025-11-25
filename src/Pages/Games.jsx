@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from "motion/react"
+import { FaStar } from "react-icons/fa";
 
 const Games = () => {
 
@@ -13,8 +14,8 @@ const Games = () => {
             .catch(err=>console.log(err))
         },[])
     return (
-        <div className='px-[145px]'>
-             <div className='grid grid-cols-3 mt-12'>
+        <div className='lg:px-[145px]'>
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {
                 games.map(game=>
                     <motion.div initial={{ scale: 0 }} 
@@ -33,9 +34,12 @@ const Games = () => {
                     <p>{game?.description}</p>
                    
          <div className='flex flex-2 gap-5 justify-between '>
-            <div className=" justify-start mt-3">
-        <p><i class="fa-solid fa-star text-yellow-500"></i> {game?.ratings}</p> 
-        </div>
+           <div className="justify-start mt-3">
+  <p className="flex items-center gap-1">
+    <FaStar className="text-yellow-500" />
+    {game?.ratings}
+  </p>
+</div>
 
         <div className="card-actions justify-end">
 
