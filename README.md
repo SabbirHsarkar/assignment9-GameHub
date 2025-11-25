@@ -1,16 +1,33 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GameHub Web App
 
-Currently, two official plugins are available:
+GameHub is an interactive web application designed to help users explore, track, and enjoy their favorite video games. It allows users to register, update their profile, view game details, and interact with their gaming library in a seamless and engaging environment. The platform includes features like user authentication (using Firebase), Google sign-up, profile management, and a game listing with pagination.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features:
 
-## React Compiler
+User Authentication: Users can register, log in, and manage their profiles using email/password or Google authentication.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Profile Management: Users can update their profile details including their display name and profile photo.
 
-## Expanding the ESLint configuration
+Game Library: Users can explore a wide range of games, view game details, and track their progress.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Responsive UI: The application is fully responsive and works well on both desktop and mobile devices.
+
+Game Detail Page: Users can click on individual games to view detailed information.
+
+Swiper Slider: Featured games are displayed in a responsive image slider.
+
+Technology:
+
+React.js: The front-end is built using React.js, which provides a dynamic and interactive UI.
+
+Firebase: User authentication and profile management are handled using Firebase Authentication.
+
+React Router: For page routing and navigation between different views.
+
+Swiper: To implement the image carousel/slider for showcasing games.
+
+TailwindCSS: For fast and efficient styling, ensuring a responsive and modern design.
+
+FontAwesome: For icons, like the Google icon on the registration page.
