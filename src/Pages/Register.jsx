@@ -41,7 +41,7 @@ const Register = () => {
         })
           .then(() => {
             setUser(userCredential.user);
-            toast.success("Registration Successful!"); // Success message
+            toast.success("Registration Successful!"); 
           })
           .catch((error) => {
             toast.error("Error updating profile");
@@ -49,7 +49,7 @@ const Register = () => {
           });
       })
       .catch((err) => {
-        toast.error("Error registering user"); // Display error if registration fails
+        toast.error("Error registering user"); 
         console.log(err);
       });
   };
@@ -66,7 +66,6 @@ const Register = () => {
         console.log(err);
       });
   };
-
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4">
       <div className="card w-full max-w-md bg-base-100 shadow-xl rounded-2xl">
